@@ -49,20 +49,3 @@ function toggleMenu() {
 }
 /* Listener para el conmutador */
 toggle.addEventListener("click", toggleMenu, false);
-
-// JS Mail
-function sendEmail() {
-    Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "mgp.smtp.test@gmail.com",
-        Password : "47778B1FDD81FF79531B574551F705AE7DAE",
-        To : 'mgp.smtp.test@gmail.com',
-        From : document.getElementById(email).value,
-        Subject : "Eroica Cards, Solicitud de Contacto",
-        Body : "Nombre: " + document.getElementById(nombre).value
-        + "<br> Email: " + document.getElementById(email).value
-        + "<br> Mensaje: " + document.getElementById(mensaje).value
-    }).then(
-        message => alert("Mensaje enviado correctamente. Lo contactaré a la brevedad.")
-    );
-}
