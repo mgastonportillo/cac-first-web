@@ -1,0 +1,352 @@
+/* INDEX */
+/* Se me rompió el header! */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Full screen */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    /* Fondo fijo y centrado */
+    background: white url("/image/1.jpg") center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header */
+.menu {
+    background: white;
+    padding: 0.5em calc(11% - 1rem) 0.4em 1.4rem;
+    font-family: 'Koulen', cursive;
+    font-size: 21px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid rgb(222, 222, 222);
+    list-style-type: none;
+}
+
+.home {
+    flex: 2;
+    padding: 0 0 0 calc(11% - 1em);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.item {
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: rgb(190, 190, 190);
+}
+
+/* Ocultar el botón de menú en pantalla completa */
+.toggle {
+    display: none;
+}
+
+/* Footer */
+#aldofon {
+    background: white;
+    width: 100%;
+    height: 1.5rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cartas */
+.cartas {
+    width: 95%;
+}
+
+.cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.col {
+    max-height: 423px;
+    max-width: 288px;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.carta{
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+.carta:hover .front,
+.carta:hover .back {
+    /* Animación de entrada (curva de tiempo)*/
+    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.front,
+.back {
+    min-height: 423px;
+    min-width: 288px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    /* Sombra */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
+    /* Animación de salida (curva de tiempo)*/
+    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    /* Ocultando el frente  (flip) */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Posicionando el frente de la carta */
+.back{
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+/* Animación de entrada (flip) */
+.carta .back{
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.carta:hover .back {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+/* Animación de salida (flip) */
+.carta .front{
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.carta:hover .front {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+/* El TUKI volador */
+.tuki {
+    -webkit-text-stroke: 2px white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    transform: translateX(-120%) translateY(-120%) rotateZ(0);
+    position: fixed;
+    z-index: 999999;
+}
+
+.tuki.activado {
+    animation: fly 50s linear infinite;
+}
+
+.arrows {
+    color: black;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 0 calc(10.5% - 1rem) 1.5rem;
+}
+
+/* Movimiento y rotación del TUKI */
+@keyframes fly {
+    98.001%, 0% {
+        display: block;
+        transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+    }
+    15% {
+        transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+    }
+    15.001%, 18% {
+        transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+    }
+    40% {
+        transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+    }
+    40.001%, 43% {
+        transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+    }
+    65% {
+        transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+    }
+        65.001%, 68% {
+    transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+    }
+    95% {
+        transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+    }
+}
+
+/* ACERCA DE */
+/* Mi logo ("gale" brand) */
+.center {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gale {
+    height: 50vh;
+    width: 50vh;
+    transform: perspective(1500px) rotateY(15deg);
+    transition: transform 1s ease 0s;
+}
+
+#gale:hover {
+    transform: perspective(3000px) rotateY(5deg);
+}
+
+/* CONTACTO */
+.maps {
+    margin-right: 2rem;
+    height: 100%;
+    min-width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.formulario {
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hablemos {
+    font-family: 'Koulen', cursive;
+}
+
+input[type=text],
+input[type=email],
+select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+
+input[type=submit] {
+    margin: 2px;
+    background-color: black;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(190, 190, 190);
+}
+
+/* Media queries */
+@media screen and (max-width: 1350px) {
+    .cartas {
+        padding-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .arrows {
+        visibility: hidden;
+    }
+    #contacto {
+        flex-direction: column;
+    }
+    .maps {
+        height: 400px;
+        width: 90%;
+        max-width: 660px;
+        margin: 0;
+        order: 1;
+        margin-bottom: 1rem;
+    }
+    .formulario {
+        max-width: 90%;
+        height: auto;
+        padding: 1rem 0 2rem 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+}
+
+@media screen and (max-width: 480px) {
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menu li a {
+        margin: 0;
+        display: block;
+        padding-right: 5%;
+    }
+    .toggle {
+        padding-right: 15px;
+        display: block;
+        order: 1;
+        font-size: 21px;
+    }
+    .item {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        display: none;
+        padding: 10px 5px;
+    }
+    .active .item {
+        color: black;
+        display: block;
+    }
+}

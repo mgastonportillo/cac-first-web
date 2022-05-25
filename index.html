@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Nombre de un proyecto personal, para un juego -->
+    <title>Eroica Cards</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Koulen, Press Start P2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Press+Start+2P&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/357946f712.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <!-- Empecemos -->
+        <ul class="menu">
+            <li class="home">
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+            </li>
+            <li class="item" id="about"><a href="about.html">ACERCA DE</a></li>
+            <li class="item" id="contact"><a href="contact.html">CONTACTO</a></li>
+            <li class="toggle">
+                <!-- Void en lugar de # para prever cambios
+                futuros y porque no estoy acostumbrado a
+                incluir return false -->
+                <a href="javascript:void(0)">
+                    <i class='fa-solid fa-bars'></i>
+                </a>
+            </li>
+        </ul>    
+    </header>
+
+    <main>
+    <!-- Contenedor de las cartas -->
+    <div class="cartas">
+        <!-- Wrapper del contenido -->
+        <div class="cols">
+            <!-- Convirtiendo 'carta' en elemento clickeable -->
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <!-- Contenedor de las caras de las cartas -->
+                <div class="carta">
+                    <!-- Visible (reverso) -->
+                    <div class="front" style="background-image: url(image/cb.png)"></div>
+                    <!-- Oculto (frente) -->
+                    <div class="back" style="background-image: url(image/cf.png)"></div>
+                </div>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="carta">
+                    <div class="front" style="background-image: url(image/rb.png)"></div>
+                    <div class="back" style="background-image: url(image/rf.png)"></div>
+                </div>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="carta">
+                    <div class="front" style="background-image: url(image/ssrb.png)"></div>
+                    <div class="back" style="background-image: url(image/ssrf.png)"></div>
+                </div>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="carta">
+                    <div class="front" style="background-image: url(image/urb.png)"></div>
+                    <div class="back" style="background-image: url(image/urf.png)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <!-- Hola profe -->
+    <div class="tuki">
+        TUKI
+    </div>
+    <div class="arrows">
+        🡸 🡸 🡹 🡹 🡺 🡺 🡻 🡻
+    </div>
+
+    <footer>
+        <div id="aldofon"></div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
