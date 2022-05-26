@@ -7,7 +7,7 @@ var huevo = [ 'ArrowLeft', 'ArrowLeft', 'ArrowUp', 'ArrowUp', 'ArrowRight', 'Arr
 var teclasPres = [];
 
 // Estableciendo sólo el index.html dentro del scope
-if (document.location.pathname == '/index.html') {
+if (document.location.pathname == '/' , '/index.html') {
     // Listener para eventos del teclado
     window.addEventListener( 'keydown', ( e ) => {
         // Agregar esos eventos al array teclasPres
