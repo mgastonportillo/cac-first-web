@@ -266,12 +266,14 @@ main {
 }
 
 #error {
-  font-family: 'Koulen', cursive;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #6e211e;
+  background: #f6d9d8;
+  border: 1px #f3c9c8 solid;
   margin-left: 2rem;
-  background: #fe8b8e;
   border-radius: 3px;
   padding: 0px;
-  font-size: 18px;
   transition: all 0.5s ease;
 }
 

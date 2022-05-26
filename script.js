@@ -24,7 +24,7 @@ function validar() {
   var mensaje = document.getElementById("mensaje").value;
   var error = document.getElementById("error");
   
-  error.style.padding = "8px 18px 7px 18px";
+  error.style.padding = "10px 20px 10px 20px";
   
   var text;
   if(nombre.length < 3){
