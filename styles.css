@@ -368,8 +368,3 @@ input[type=submit]:hover {
     display: block;
   }
 }
-
-/* Mobile */
-@media screen and (max-width: 320px) {
-
-}
