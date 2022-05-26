@@ -15,6 +15,8 @@
 <body>
 
     <header>
+        <!-- Header utilizando listas, para reflejar
+        contenido que vimos en clases -->
         <ul class="menu">
             <li class="home">
                 <a href="index.html">
@@ -34,14 +36,20 @@
     <main id="contacto">
         <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14321.766755743189!2d-58.17520043773194!3d-26.182306466645684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945ca5fb27895363%3A0x5e5438f37b33bd8c!2sHelader%C3%ADa%20Cremolatti!5e0!3m2!1sen!2sar!4v1653509471197!5m2!1sen!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">Google Maps iframe</iframe>
         <div class="formulario">
-            <form onsubmit="sendEmail(), reset(); return false">
-                <h1 id="hablemos"><p>Hablemos</p></h1>
+            <!-- Visualmente no me quedaba bien así que permití
+            que la página se recargue luego de que el form se
+            envíe correctamente -->
+            <form action="" onsubmit="return validar();">
+                <div class="top_form">
+                  <h1 id="hablemos"><p>Hablemos</p></h1>
+                  <div id="error"></div>
+                </div>
                 <label for="nombre"></label>
-                <input type="text" id="nombre" name="Nombre" placeholder="Ingrese su nombre completo" required>
+                <input type="text" id="nombre" name="Nombre" placeholder="Ingrese su nombre completo">
                 <label for="email"></label>
-                <input type="email" id="email" name="Dirección de email" placeholder="Ingrese su dirección de email" required>
+                <input type="email" id="email" name="Dirección de email" placeholder="Ingrese su dirección de email">
                 <label for="mensaje"></label>
-                <textarea id="mensaje" name="Mensaje" placeholder="¿Sobre qué le gustaría hablar?" style="height:200px"></textarea>
+                <textarea id="mensaje" name="Mensaje" placeholder="¿Sobre qué le gustaría hablar?"></textarea>
                 <input type="submit" value="Enviar mensaje">
             </form>
         </div>
@@ -52,6 +60,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 </html>
