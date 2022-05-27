@@ -3,9 +3,7 @@
 <hr>
 Trabajo Práctico para Curso Full Stack Python de Codo A Codo
 <br><br>
-Link desactualizado pero funcional:
-<br>
-https://eroicacards.netlify.app/
+Link: https://eroicacards.netlify.app/
 <br>
 (Github Pages tiene fallas al mostrar el contenido)
 <hr>
